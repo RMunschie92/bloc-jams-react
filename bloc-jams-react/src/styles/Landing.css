@@ -1,0 +1,25 @@
+.hero-title, .point {
+  text-align: center;
+}
+
+.hero-title {
+  font-family: 'Raleway', sans-serif;
+  margin-top: 6em;
+  margin-bottom: 1.5em;
+}
+
+.point-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+.point-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25em;
+}
+
+.point .custom-icon {
+  font-size: 48px;
+  text-align: center;
+}

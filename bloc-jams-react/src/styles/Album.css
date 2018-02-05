@@ -1,0 +1,55 @@
+#album-info {
+  margin-bottom: 4em;
+}
+
+#album-cover-art {
+  width: 30%;
+  height: 30%;
+  margin-left: 1.5em;
+}
+
+.album-details {
+  margin-top: 8%;
+}
+
+#album-title, .artist {
+  margin-top: -5px;
+  margin-bottom: .75em;
+}
+
+#song-list {
+  width: 80%;
+  margin-left: 1.5em;
+}
+
+
+td {
+  border-bottom: 1px solid #333;
+  padding: 8px;
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: 1.25em;
+}
+
+.song-title, .song-duration {
+  font-size: 1.25em;
+}
+
+.song-actions button:hover .song-number {
+  display: none;
+}
+
+.song-actions button .ion-ios-play {
+  display: none;
+}
+
+.song-actions button:hover .ion-ios-play{
+  display: block;
+}
+
+.hidden-number {
+  display: none;
+}

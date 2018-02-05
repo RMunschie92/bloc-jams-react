@@ -1,0 +1,33 @@
+.library {
+  margin: 5em;
+  text-align: center;
+}
+
+.album-div {
+  margin-top: 4em;
+}
+
+.album-art {
+  width: 30%;
+  height: 30%;
+  margin-bottom: 1.5em;
+}
+
+.app-title h1 {
+  font-size: 1em;
+}
+
+.album-title {
+  font-size: 2em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.album-artist {
+  font-size: 1.75em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.album-songs-length {
+  font-size: 1.5em;
+  font-family: 'Roboto', sans-serif;
+}

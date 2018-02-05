@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar.js';
+import './../styles/Album.css';
 
 class Album extends Component {
   constructor(props) {
@@ -16,11 +17,15 @@ class Album extends Component {
       currentTime: 0,
       duration: album.songs[0].duration,
       volume: 0.8,
-      isPlaying: false
+      isPlaying: false,
+      isHovered: false,
+      dynamicClass: 'song-number',
+      targetId: 0
     };
 
     this.audioElement = document.createElement('audio');
     this.audioElement.src = album.songs[0].audioSrc;
+
   }
 
   componentDidMount() {
@@ -48,12 +53,18 @@ class Album extends Component {
 
   play() {
     this.audioElement.play();
-    this.setState({ isPlaying: true });
+    this.setState({
+      isPlaying: true,
+      dynamicClass: 'icon ion-ios-pause'
+    });
   }
 
   pause() {
     this.audioElement.pause();
-    this.setState({ isPlaying: false });
+    this.setState({
+      isPlaying: false,
+      dynamicClass: 'icon ion-ios-play'
+    });
   }
 
   setSong(song) {
@@ -97,6 +108,7 @@ class Album extends Component {
     const newVolume = e.target.value;
     this.audioElement.volume = newVolume;
     this.setState({ volume: newVolume });
+    console.log(this.audioElement.volume);
   }
 
   formatTime(time) {
@@ -115,14 +127,42 @@ class Album extends Component {
     }
   }
 
+  mouseEnter(e) {
+    console.log(e.target.id);
+    if (e.target !== this.state.currentSong && !this.state.isPlaying) {
+      this.setState({
+        dynamicClass: 'icon ion-ios-play',
+        targetId: e.target.id
+      });
+    }
+  }
+
+  mouseLeave(e) {
+    console.log(e.target);
+    if (!this.state.currentSong || !this.state.isPlaying) {
+      this.setState({
+        dynamicClass: 'song-number',
+        targetId: e.target.id
+      });
+    }
+    else if (this.state.currentSong) {
+      this.setState({
+        dynamicClass: 'icon ion-ios-pause',
+        targetId: e.target.id
+      })
+    }
+  }
+
 
   render() {
     return (
       <section className="album">
-        <section id="album-info">
-          <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
-          <div className="album-details">
+        <section id="album-info" className="row">
+          <img id="album-cover-art" className="col-md-4" src={this.state.album.albumCover} alt={this.state.album.title}/>
+          <div className="album-details col-md-8">
+            <h5>ALBUM</h5>
             <h1 id="album-title">{this.state.album.title}</h1>
+            <h5>ARTIST</h5>
             <h2 className="artist">{this.state.album.artist}</h2>
             <div id="release-info">{this.state.album.releaseInfo}</div>
           </div>
@@ -138,13 +178,13 @@ class Album extends Component {
               <tr className="song" key={index} onClick={ () => this.handleSongClick(song)} >
                 <td className="song-actions">
                   <button>
-                    <span className="song-number">{index+1}</span>
-                    <span className="ion-play"></span>
-                    <span className="ion-pause"></span>
+                    <span className={(this.state.isPlaying && (this.state.currentSong === song)) ?'hidden-number' : 'song-number'}>{index + 1}</span>
+                    <span className={(this.state.isPlaying && (this.state.currentSong === song)) ? 'icon ion-ios-pause' : ''}></span>
+                    <span className={(this.state.isPlaying && (this.state.currentSong === song)) ? '' : 'icon ion-ios-play'}></span>
                   </button>
                 </td>
                 <td className="song-title">{song.title}</td>
-                <td className="song-duration">{song.duration}</td>
+                <td className="song-duration">{this.formatTime(song.duration)}</td>
               </tr>
             )}
           </tbody>

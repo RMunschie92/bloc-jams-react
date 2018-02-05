@@ -1,0 +1,50 @@
+.App header nav {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 1em;
+}
+
+.App header nav a:hover {
+  color: white;
+}
+
+.link {
+  margin: 0 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+a:hover, a:active, a:visited, a:focus {
+  text-decoration: none;
+}
+
+.app-title {
+  color: white;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 4.75em;
+  margin-top: 1em;
+}
+
+
+.app-title-small {
+  color: white;
+  font-family:  'Raleway', sans-serif;
+  font-size: 2.5em;
+  text-align: left;
+  margin-left: 1em;
+  margin-top: -1em;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,57 @@
+.player-bar {
+  width: 80%;
+  margin: 3em auto;
+  text-align: center;
+}
+
+#buttons button {
+  margin: 0 2.5em;
+}
+
+#buttons button span {
+  font-size: 1.75em;
+  padding: 0 5px;
+}
+
+#volume-control {
+  width: 10%;
+  margin-bottom: 0;
+}
+
+#volume-control span {
+  width: 20%;
+  display: inline;
+}
+
+#volume-control input {
+  width: 70%;
+  display: inline;
+}
+
+#volume-control .custom-icon {
+  font-size: 1.5em;
+  margin-right: .75em;
+}
+
+#time-control {
+  width: 75%;
+  margin: auto;
+}
+
+#time-control input {
+  width: 85%;
+  display: inline;
+  margin: 0 .75em;
+}
+
+.current-time {
+  text-align: left;
+  display: inline;
+  font-size: 1.25em;
+}
+
+.total-time {
+  text-align: right;
+  display: inline;
+  font-size: 1.25em;
+}
