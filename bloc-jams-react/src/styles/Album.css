@@ -1,5 +1,6 @@
 #album-info {
   margin-bottom: 4em;
+  display: flex;
 }
 
 #album-cover-art {
@@ -9,7 +10,8 @@
 }
 
 .album-details {
-  margin-top: 8%;
+  margin-left: 0.6em;
+  align-self: flex-end;
 }
 
 #album-title, .artist {

@@ -157,9 +157,9 @@ class Album extends Component {
   render() {
     return (
       <section className="album">
-        <section id="album-info" className="row">
-          <img id="album-cover-art" className="col-md-4" src={this.state.album.albumCover} alt={this.state.album.title}/>
-          <div className="album-details col-md-8">
+        <section id="album-info">
+          <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
+          <div className="album-details">
             <h5>ALBUM</h5>
             <h1 id="album-title">{this.state.album.title}</h1>
             <h5>ARTIST</h5>
