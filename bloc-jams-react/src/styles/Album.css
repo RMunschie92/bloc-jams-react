@@ -38,11 +38,11 @@ td {
 button {
   background: none;
   border: none;
-  font-size: 1.25em;
+  font-size: 1.15em;
 }
 
-.song-title, .song-duration {
-  font-size: 1.25em;
+.song-title, .song-duration, {
+  font-size: 1.15em;
 }
 
 .song-actions button:hover .song-number {
