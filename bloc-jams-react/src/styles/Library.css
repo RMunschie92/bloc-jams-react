@@ -19,15 +19,18 @@
 
 .album-title {
   font-size: 2em;
+  color: #fff;
   font-family: 'Roboto', sans-serif;
 }
 
 .album-artist {
   font-size: 1.75em;
+    color: #fff;
   font-family: 'Roboto', sans-serif;
 }
 
 .album-songs-length {
   font-size: 1.5em;
+  color: #fff;
   font-family: 'Roboto', sans-serif;
 }
